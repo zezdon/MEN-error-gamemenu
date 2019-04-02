@@ -12,7 +12,6 @@ var User = require("./models/user");
 var userdataDB = require("./userdata");
 var gamedataDB = require("./gamedata");
 
-//photosforclass.com/search/camping
 //connecting local mongodb database named test
 mongoose.connect('mongodb://127.0.0.1:27017/test_base_app', {useNewUrlParser: true});
 
@@ -23,10 +22,10 @@ mongoose.connection.once('connected', function() {
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-//console.log(__dirname);
-//app.use(express.static(__dirname + "public"));
-//app.use(express.static("public"));
-app.use(express.static(__dirname + '/public'));
+
+app.use(express.static("public"));
+//app.use(express.static(__dirname + '/public'));
+
 userdataDB();
 gamedataDB();
 
@@ -82,7 +81,48 @@ app.get("/blogs/:id",isLoggedIn, function(req, res){
     })
 });
 
+// =================
+// COMMENTS ROUTES
+// =================
+
+app.get("/blogs/:id/comments/new",isLoggedIn, function(req, res){
+    // find blog by id
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err) {
+            console.log(err);            
+        } else {            
+            res.render("comments/new", {blog: foundBlog});
+        }
+    });    
+});
+
+app.post("/blogs/:id/comments",isLoggedIn, function(req, res){   
+    //lookup blog using ID
+    Blog.findById(req.params.id, function(err, blog){
+        if (err) {
+            console.log(err)
+            res.redirect("/blogs");
+        } else {          
+            //create new comment
+            Comment.create(req.body.comment, function(err, comment){         
+                if(err) {            
+                    console.log(err);                    
+                } else {
+                    blog.comments.push(comment);
+                    blog.save();
+                    res.redirect("/blogs/" + blog._id);                           
+                }               
+            });
+            //connect new comment to blog            
+            //redirect blog show page            
+        }
+    });            
+});
+
+// ======================
 // LOGIN ROUTES
+// ======================
+
 //render login form
 app.get("/login", function(req, res){
     res.render("login");
