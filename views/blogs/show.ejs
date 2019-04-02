@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+    <div class="ingame" style="display: block;">
+        <div class="ui grid centered">
+            <div class="three wide column">
+                <div class="ui right floated secondary button inverted"><i class="left chevron icon"></i>
+                    Back
+                    <img src="<%= blog.image %>">
+                    <h4><a><%=blog.name%></a></h4>
+                    <p><%=blog.description%></p>
+                </div>
+            </div>
+            <div class="ten wide column">
+                <div id="game-launch">
+                </div>
+            </div>
+            <div class="three wide column"></div>
+        </div>
+    </div>
+                <a href="/blogs/<%= blog._id %>/comments/new">Add New Comment</a>
+            
+            <hr>
+            <% blog.comments.forEach(function(comment){ %>            
+                    <strong><%= comment.author %></strong>                    
+                    <p><%= comment.text %></p>                
+            <% }) %>
+        
+<% include ../partials/footer %>
