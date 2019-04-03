@@ -51,11 +51,14 @@
                                 <%= blog.description %>
                             </div>
                             <div class="extra">
-                                <div class="play ui right floated secondary button inverted">
-                                    <a href="/blogs/<%= blog._id %>">Play</a>                                    
+                               <div class="play ui right floated secondary button inverted">
+                                    <a href="/blogs/<%= blog._id %>">Info</a>                                    
                                     <i class="right chevron icon"></i>
                                 </div>
-
+                                <div class="play ui right floated secondary button inverted">
+                                    <a href="<%= blog.game%>" target="_blank">Play</a>                                    
+                                    <i class="right chevron icon"></i>
+                                </div>                                
                             </div>
                         </div>
                     </div>

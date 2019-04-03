@@ -15,3 +15,7 @@ body {
 .search {
     float: right;
 }
+
+a {
+    color: white;
+}

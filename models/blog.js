@@ -6,6 +6,7 @@ var blogSchema = new mongoose.Schema({
    icon: String,
    description: String,
    code: String,
+   game: String,
    comments: [
       {
          type: mongoose.Schema.Types.ObjectId,
