@@ -4,14 +4,13 @@
         <div class="ui grid centered">
             <div class="three wide column">
                 <div class="ui right floated secondary button inverted"><i class="left chevron icon"></i>
-                    Back
-                    <img src="<%= blog.image %>">
-                    <h4><a><%=blog.name%></a></h4>
-                    <p><%=blog.description%></p>
+                    <a href="/blogs">Back</a>                                        
+                    <h4><a href="https://comeon-static-test.casinomodule.com/games/starburst_mobile_html/game/starburst_mobile_html.xhtml?server=https%3A%2F%2Fcomeon-game-test.casinomodule.com%2F&lang=sv&sessId=DEMO-41e133d5237c402-EUR&gameId=starburst_not_mobile_sw&operatorId=default&staticsharedurl=http%3A%2F%2Fstatic-shared.casinomodule.com%2Fgameclient_html%2Fdevicedetection%2Fcurrent" target="_blank"><%=blog.name%></a></h4> 
+                    <p><a href="https://comeon-static-test.casinomodule.com/games/starburst_mobile_html/game/starburst_mobile_html.xhtml?server=https%3A%2F%2Fcomeon-game-test.casinomodule.com%2F&lang=sv&sessId=DEMO-41e133d5237c402-EUR&gameId=starburst_not_mobile_sw&operatorId=default&staticsharedurl=http%3A%2F%2Fstatic-shared.casinomodule.com%2Fgameclient_html%2Fdevicedetection%2Fcurrent" target="_blank"><%=blog.description%></a></p>
                 </div>
             </div>
             <div class="ten wide column">
-                <div id="game-launch">
+                <div id="game-launch">                    
                 </div>
             </div>
             <div class="three wide column"></div>
@@ -24,6 +23,7 @@
                     <strong><%= comment.author %></strong>                    
                     <p><%= comment.text %></p>                
             <% }) %>
+<a href="/blogs">Go Back</a><br />
 <a href="/blogs/<%= blog._id %>/comments/new">Add New Comment</a>
         
 <% include ../partials/footer %>
