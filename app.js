@@ -28,8 +28,10 @@ mongoose.connection.once('connected', function() {
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-//app.use(express.static("public"));
 app.use(express.static(__dirname + '/public'));
+app.use('*/images',express.static('public/images'));
+app.use('*/stylesheets',express.static('public/stylesheets'));
+//app.use('*/js',express.static('public/js'));
 
 userdataDB();
 gamedataDB();

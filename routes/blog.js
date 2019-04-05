@@ -16,14 +16,14 @@ router.get("/",isLoggedIn, function (req, res) {
 
 //SHOW - show more info about one Blog
 router.get("/:id",isLoggedIn, function(req, res){
-    //find the Blog with provided ID
+    //find the Blog with provided ID    
     Blog.findById(req.params.id).populate("comments").exec(function(err, foundBlog){
         if(err) {
             console.log(err);
         } else {
             //console.log(foundBlog);
             //render show template with that Blog            
-            res.render("blogs/show", {blog: foundBlog});
+            res.render("blogs/show", {blogs: foundBlog});
         }
     })
 });
