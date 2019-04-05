@@ -9,8 +9,8 @@ var passportLocalMongoose = require("passport-local-mongoose");
 var Blog = require("./models/blog");
 var Comment = require("./models/comment");
 var User = require("./models/user");
-var userdataDB = require("./userdata");
-var gamedataDB = require("./gamedata");
+var userdataDB = require("./dbdata/userdata");
+var gamedataDB = require("./dbdata/gamedata");
 
 //requring routes
 var commentRoutes = require("./routes/comment");

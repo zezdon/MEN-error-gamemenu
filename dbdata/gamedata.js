@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
-var Blog = require("./models/blog");
-var Comment   = require("./models/comment");
+var Blog = require("../models/blog");
+var Comment   = require("../models/comment");
 
 var data = [
     {
@@ -41,7 +41,7 @@ var data = [
     
 ]
 
-function seedDB(){
+function gameDB(){
    //Remove all blogs
    Blog.remove({}, function(err){
         if(err){
@@ -82,4 +82,4 @@ function seedDB(){
     //add a few comments
 }
 
-module.exports = seedDB;
+module.exports = gameDB;

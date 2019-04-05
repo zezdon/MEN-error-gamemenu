@@ -14,7 +14,7 @@
                     <a href="/blogs/<%= blog._id %>/comments/new">Add New Comment</a>
                     <hr>
                     <% blog.comments.forEach(function(comment){ %>
-                    <strong><%= comment.author %></strong>
+                    <strong><%= comment.author.username %></strong>
                     <p><%= comment.text %></p>
                     <% }) %>
                 </div>
