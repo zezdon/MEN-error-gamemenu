@@ -19,7 +19,10 @@
             </div>
 
             <div class="logout ui left floated secondary button inverted">
+                <i class="left chevron icon"></i><a href="/blogs">Back</a>
+            </div>
 
+            <div class="logout ui left floated secondary button inverted">
                 <i class="left chevron icon"></i><a href="/logout">Logout</a>
             </div>
 
@@ -28,13 +31,15 @@
 
         </div>
         <div class="four wide column">
-            <form action="/blogs" method="GET" id="blog-search">
             <div class="search ui small icon input ">
-                <i class="search icon"></i>
-                <input type="text" name="search" placeholder=" search...">
-                <input type="submit" value="Search">                
+                <form action="/blogs" method="GET" id="blog-search">
+                    <div class="search ui small icon input ">
+                        <i class="search icon"></i>
+                        <input type="text" name="search" placeholder=" search...">
+                        <input type="submit" value="Search">
+                    </div>
+                </form>
             </div>
-            </form>    
         </div>
     </div>
 
@@ -67,14 +72,11 @@
                     <hr>
                     <div class="ui right floated secondary button inverted"><i class="left chevron icon"></i>
                         <a href="/blogs/<%= blogs._id %>/comments/new">Add New Comment</a>
-                    </div>                    
+                    </div>
                     <% blogs.comments.forEach(function(comment){ %>
                     <strong><%= comment.author.username %></strong>
                     <p><%= comment.text %></p>
                     <% }) %>
-                </div>
-                <div class="ui right floated secondary button inverted"><i class="left chevron icon"></i>
-                    <a href="/blogs">Back</a>
                 </div>
             </div>
         </div>

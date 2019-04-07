@@ -30,12 +30,12 @@
         <div class="four wide column">
             <div class="search ui small icon input ">
                 <form action="/blogs" method="GET" id="blog-search">
-                    <div>
+                    <div class="search ui small icon input ">
                         <i class="search icon"></i>
-                            <input type="text" name="search" placeholder=" search...">
+                        <input type="text" name="search" placeholder=" search...">
                         <input type="submit" value="Search">
                     </div>
-                </form>               
+                </form>
             </div>
             <% if(noMatch !== null){ %>
             <h3><%= noMatch %></h3>
@@ -84,6 +84,14 @@
                 <div class="category item">
                     <div class="content">
                         <div class="header"></div>
+                        <% blogs.forEach(function(blog){ %>
+ 
+                        <b class="name"><%= blog.name %></b>
+                        <b class="name"><%= blog.categoryIds %></b>
+                        
+                        <hr>
+
+                        <% }); %>
                     </div>
                 </div>
                 <!-- end category item template -->
@@ -93,17 +101,5 @@
     </div>
 
 </div>
-<div class="ingame" style="display: none;">
-    <div class="ui grid centered">
-        <div class="three wide column">
-            <div class="ui right floated secondary button inverted"><i class="left chevron icon"></i>Back
-            </div>
-        </div>
-        <div class="ten wide column">
-            <div id="game-launch">
-            </div>
-        </div>
-        <div class="three wide column"></div>
-    </div>
-</div>
+
 <% include ../partials/footer %>

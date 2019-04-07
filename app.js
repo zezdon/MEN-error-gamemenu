@@ -7,10 +7,12 @@ var LocalStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
 
 var Blog = require("./models/blog");
+//var Categories = require("./models/categories");
 var Comment = require("./models/comment");
 var User = require("./models/user");
 var userdataDB = require("./dbdata/userdata");
 var gamedataDB = require("./dbdata/gamedata");
+//var categoriesdataDB = require("./dbdata/categoriesdata");
 
 //requring routes
 var commentRoutes = require("./routes/comment");
