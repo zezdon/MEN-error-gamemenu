@@ -40,11 +40,15 @@
                     </div>
                 </form>
             </div>
+            <% if(noMatch !== null){ %>
+            <h3><%= noMatch %></h3>
+            <% } %>
+
         </div>
     </div>
 
     <div class="ui grid">
-        <div class="twelve wide column">
+        <div class="sixteen wide column">
             <h3 class="ui dividing header">Games</h3>
 
             <div class="ui relaxed divided game items links">
@@ -80,21 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="four wide column">
-            <h3 class="ui dividing header">Categories</h3>
 
-            <div class="ui selection animated list category items">
-
-                <!-- category item template -->
-                <div class="category item">
-                    <div class="content">
-                        <div class="header"></div>
-                    </div>
-                </div>
-                <!-- end category item template -->
-
-            </div>
-        </div>
     </div>
 </div>
 

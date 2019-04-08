@@ -83,15 +83,8 @@
                 <!-- category item template -->
                 <div class="category item">
                     <div class="content">
-                        <div class="header"></div>
-                        <% blogs.forEach(function(blog){ %>
- 
-                        <b class="name"><%= blog.name %></b>
-                        <b class="name"><%= blog.categoryIds %></b>
-                        
-                        <hr>
-
-                        <% }); %>
+                        <%= showCategories("1","VIDEO SLOTS"); %>
+                        <%= showCategories("2","SLOT MACHINES"); %>
                     </div>
                 </div>
                 <!-- end category item template -->
@@ -103,3 +96,17 @@
 </div>
 
 <% include ../partials/footer %>
+
+<% function showCategories(p1, p2) { %>
+<div class="header"><%= p2 %></div><hr>
+ <% blogs.forEach(function(blog){ %> 
+    <% var obj = blog.categoryIds; %> 
+        <% var items = Object.keys(obj); %>
+        <% items.forEach(function(item) { %>
+            <% if(obj[item] === p1) { %>
+                    <b class="name"><%= blog.name%></b><hr>
+              <% } %>
+       <% }); %>
+   <% }); %>
+<br />
+<% } %>

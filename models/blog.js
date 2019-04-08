@@ -8,6 +8,7 @@ var blogSchema = new mongoose.Schema({
    code: String,
    game: String,
    categoryIds: String,
+   categoryTst: String,    
    comments: [
       {
          type: mongoose.Schema.Types.ObjectId,

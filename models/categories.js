@@ -1,9 +1,10 @@
+var mongoose = require('mongoose');
 
-
+// SCHEMA SETUP
 var categoriesSchema = mongoose.Schema({
       
     id: String,    
-    name: string
+    name: String
     
 });
     

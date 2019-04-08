@@ -4,16 +4,16 @@ var User = require("../models/categories");
 var data = [
 
 {
-      "id": 0,
+      "id": "0",
       "name": "ALL"
 },
 
 {
-      "id": 1,
+      "id": "1",
       "name": "VIDEO SLOTS"
 },
 {
-      "id": 2,
+      "id": "2",
       "name": "SLOT MACHINES"	
 },    
     
@@ -25,7 +25,7 @@ function seedDB() {
         if (err) {
             console.log(err);
         }
-        console.log("removed Users!");
+        console.log("removed categories!");
 
         //add a few Users
         data.forEach(function (seed) {
@@ -33,9 +33,7 @@ function seedDB() {
                 if (err) {
                     console.log(err)
                 } else {
-                    console.log("added a user");
-                    //create a comment
-
+                    console.log("added a category");
                 }
             });
         });

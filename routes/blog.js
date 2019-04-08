@@ -33,6 +33,7 @@ router.get("/",isLoggedIn, function (req, res) {
 
 //SHOW - show more info about one Blog
 router.get("/:id",isLoggedIn, function(req, res){
+    var noMatch = null;
     //find the Blog with provided ID    
     Blog.findById(req.params.id).populate("comments").exec(function(err, foundBlog){
         if(err) {
@@ -40,7 +41,7 @@ router.get("/:id",isLoggedIn, function(req, res){
         } else {
             //console.log(foundBlog);
             //render show template with that Blog            
-            res.render("blogs/show", {blogs: foundBlog});
+            res.render("blogs/show", {blogs: foundBlog, noMatch: noMatch});
         }
     })
 });
