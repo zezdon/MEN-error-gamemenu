@@ -1,11 +1,9 @@
 ### Hej Caroline
 
-Det här är mitt Github- test(Det är ju relativt omfattande) och jag har försökt att göra det så fort det gick. Det finns en kategori del men den är inte klar än. 
+Det här är mitt Github- test och jag har försökt att göra det så fort det gick. Det finns en kategori del men den är inte klar än. 
 
 Testet är gjort med:
 MongoDB, Express och NodeJs
-
-Då jag egentligen inte vet mer om Comeon än det jag kan läsa på nätet, så vore det intressant att få göra ett förutsättningslöst studiebesök hos er.
 
 Med vänlig hälsning
 

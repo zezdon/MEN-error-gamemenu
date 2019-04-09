@@ -46,24 +46,45 @@ var data = [
     
 ]
 
-function gameDB() {
-    //Remove all blogs
-    Blog.remove({}, function (err) {
-        if (err) {
+function gameDB(){
+   //Remove all blogs
+   Blog.remove({}, function(err){
+        if(err){
             console.log(err);
         }
         console.log("removed blogs!");
-        //add a few game/blogs
-        data.forEach(function (dbse) {
-            Blog.create(dbse, function (err, blog) {
-                if (err) {
-                    console.log(err)
-                } else {
-                    console.log("added a blog");
-                }
+        Comment.remove({}, function(err) {
+            if(err){
+                console.log(err);
+            }
+            console.log("removed comments!");
+             //add a few blogs
+            data.forEach(function(seed){
+                Blog.create(seed, function(err, blog){
+                    if(err){
+                        console.log(err)
+                    } else {
+                        console.log("added a blog");
+                        //create a comment
+                        Comment.create(
+                            {
+                                text: "This is just a test comment",
+                                author: "Administrator"
+                            }, function(err, comment){
+                                if(err){
+                                    console.log(err);
+                                } else {
+                                    blog.comments.push(comment);
+                                    blog.save();
+                                    console.log("Created new comment");
+                                }
+                            });
+                    }
+                });
             });
         });
-    });
+    }); 
+    //add a few comments
 }
 
 module.exports = gameDB;
