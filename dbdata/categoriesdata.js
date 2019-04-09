@@ -19,7 +19,7 @@ var data = [
     
 ]
 
-function seedDB() {
+function categoriesDB() {
     //Remove all Users
     User.remove({}, function (err) {
         if (err) {
@@ -40,4 +40,4 @@ function seedDB() {
     });
 }
 
-module.exports = seedDB;
+module.exports = categoriesDB;
