@@ -1,13 +1,6 @@
-### Hej Caroline
 
-Det här är mitt Github- test och jag har försökt att göra det så fort det gick. Det finns en kategori del men den är inte klar än. 
-
-Testet är gjort med:
+Det här är gjort med:
 MongoDB, Express och NodeJs
-
-Med vänlig hälsning
-
-Mats Gröningsson 
 
 ### Setup
 you need NodeJs and MongoDB installed
